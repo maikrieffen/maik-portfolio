@@ -119,7 +119,7 @@ ul{list-style:none}
 .eye{display:flex;align-items:center;gap:12px;margin-bottom:44px;opacity:0;animation:fu .8s var(--ease) .1s forwards}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
 .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text2);font-weight:400}
-.h1{font-size:clamp(48px,8vw,104px);font-weight:300;line-height:1.01;letter-spacing:-.04em;max-width:14ch;margin-bottom:32px;opacity:0;animation:fu .9s var(--ease) .25s forwards}
+.h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:300;line-height:1.08;letter-spacing:-.04em;max-width:none;margin-bottom:32px;opacity:0;animation:fu .9s var(--ease) .25s forwards}
 .h1 em{font-style:normal;color:var(--accent)}
 .sub{max-width:52ch;font-size:clamp(16px,1.8vw,19px);line-height:1.72;color:var(--text2);margin-bottom:52px;opacity:0;animation:fu .9s var(--ease) .4s forwards;font-weight:300}
 .btns{display:flex;align-items:center;gap:20px;opacity:0;animation:fu .9s var(--ease) .55s forwards;flex-wrap:wrap}
@@ -132,7 +132,7 @@ ul{list-style:none}
 
 /* ─── STRIP ─── */
 .strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;transition:border-color .35s}
-.strip-i{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.strip-i{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:8px}
 .cap{display:flex;align-items:center;gap:9px;padding:5px clamp(12px,2vw,28px);border-right:1px solid var(--border);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);white-space:nowrap;font-weight:400;transition:border-color .35s}
 .cap:last-child{border-right:none}
 .cap:first-child{padding-left:0}
@@ -223,7 +223,7 @@ ul{list-style:none}
 .pbadge{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:16px}
 .pbadge-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
 .pnum{display:none}
-.ptitle{font-size:clamp(24px,3vw,40px);font-weight:400;line-height:1.1;letter-spacing:-.03em;margin-bottom:12px;color:var(--text)}
+.ptitle{font-size:clamp(24px,3vw,40px);font-weight:400;line-height:1.1;letter-spacing:-.03em;margin-bottom:1.25rem;color:var(--text)}
 .pdesc{font-size:15px;line-height:1.72;color:var(--text2);max-width:40ch;margin-bottom:20px;font-weight:300}
 .pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
 .pill{
@@ -405,7 +405,7 @@ ul{list-style:none}
 
   <header class="hero">
     <div class="c">
-      <div class="eye"><span class="dot"></span><span class="lbl">Senior UX &amp; Product Designer · Barcelona</span></div>
+      <div class="eye"><span class="dot"></span><span class="lbl">Hi, I'm Maik —</span></div>
       <h1 class="h1">Senior UX &amp; Product Designer<br>building scalable systems for complex platforms</h1>
       <div class="btns">
         <button class="bp" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">View work <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -415,10 +415,10 @@ ul{list-style:none}
   </header>
 
   <div class="strip"><div class="c"><div class="strip-i">
-    <div class="cap"><span class="cdot"></span>B2B</div>
-    <div class="cap"><span class="cdot"></span>InsurTech</div>
-    <div class="cap"><span class="cdot"></span>Admin Tools</div>
-    <div class="cap"><span class="cdot"></span>Barcelona</div>
+    <span class="pill">B2B</span>
+    <span class="pill">InsurTech</span>
+    <span class="pill">Admin Tools</span>
+    <span class="pill">6+ years experience</span>
   </div></div></div>
 
   <!-- WORK -->
@@ -462,7 +462,7 @@ ul{list-style:none}
               <div class="pbadge"><span class="pbadge-dot"></span>Design System &amp; Rebrand</div>
                 <span class="pnum">02</span>
               </div>
-              <div class="ptitle">Raptive</div>
+              <div class="ptitle">Unifying a design system and rebrand across a global ad platform</div>
               <div class="pills">
                 <span class="pill">Design System</span>
                 <span class="pill">Rebranding</span>
@@ -510,7 +510,7 @@ ul{list-style:none}
               <div class="pbadge"><span class="pbadge-dot"></span>Website &amp; Online Presence</div>
                 <span class="pnum">04</span>
               </div>
-              <div class="ptitle">Sigauri Security Service</div>
+              <div class="ptitle">Building an online presence for a Berlin-based security company</div>
               <div class="pills">
                 <span class="pill">Web Design</span>
                 <span class="pill">Conversion</span>
