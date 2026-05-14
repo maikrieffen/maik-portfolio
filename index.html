@@ -119,6 +119,7 @@ ul{list-style:none}
 .eye{display:flex;align-items:center;gap:12px;margin-bottom:44px;opacity:0;animation:fu .8s var(--ease) .1s forwards}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
 .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text2);font-weight:400}
+.eye .lbl{font-size:14px}
 .h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:300;line-height:1.08;letter-spacing:-.04em;max-width:none;margin-bottom:32px;opacity:0;animation:fu .9s var(--ease) .25s forwards}
 .h1 em{font-style:normal;color:var(--accent)}
 .sub{max-width:52ch;font-size:clamp(16px,1.8vw,19px);line-height:1.72;color:var(--text2);margin-bottom:52px;opacity:0;animation:fu .9s var(--ease) .4s forwards;font-weight:300}
@@ -234,6 +235,7 @@ ul{list-style:none}
   padding:5px 13px;border-radius:100px;font-weight:400;
   transition:background .35s,border-color .35s,color .35s;
 }
+.strip-i .pill{font-size:13px;padding:7px 16px}
 .plink{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--accent);letter-spacing:.02em;transition:gap .2s}
 .pcard:hover .plink{gap:13px}
 
@@ -383,7 +385,7 @@ ul{list-style:none}
       <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <a class="git" href="mailto:maikrieffenstahl@gmail.com">Get in touch</a>
+      <button class="git copy-email-btn" onclick="copyEmail()">Copy email</button>
     </div>
   </div>
 </nav>
@@ -391,6 +393,7 @@ ul{list-style:none}
 <div class="nav-drop" id="nav-drop">
   <button class="nd-nl" onclick="go('approach');closeMenu()">Approach</button>
   <button class="nd-nl" onclick="go('resume');closeMenu()">Resume</button>
+  <button class="nd-nl copy-email-btn" onclick="copyEmail();closeMenu()">Copy email</button>
   <div class="nd-tog" onclick="toggleTheme()" role="button" aria-label="Toggle theme">
     <span class="nd-tog-lbl">Theme</span>
     <div class="tog" style="pointer-events:none">
@@ -405,7 +408,7 @@ ul{list-style:none}
 
   <header class="hero">
     <div class="c">
-      <div class="eye"><span class="dot"></span><span class="lbl">Hi, I'm Maik —</span></div>
+      <div class="eye"><span class="dot"></span><span class="lbl">Hi, I'm Maik</span></div>
       <h1 class="h1">Senior UX &amp; Product Designer<br>building scalable systems for complex platforms</h1>
       <div class="btns">
         <button class="bp" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">View work <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -415,10 +418,10 @@ ul{list-style:none}
   </header>
 
   <div class="strip"><div class="c"><div class="strip-i">
-    <span class="pill">B2B</span>
+    <span class="pill">B2B · B2C</span>
     <span class="pill">InsurTech</span>
     <span class="pill">Admin Tools</span>
-    <span class="pill">6+ years experience</span>
+    <span class="pill">Based in Barcelona</span>
   </div></div></div>
 
   <!-- WORK -->
@@ -718,6 +721,26 @@ ul{list-style:none}
 
 
 <script>
+// ── COPY EMAIL ─────────────────────────────────────
+function copyEmail(){
+  var email='maik@mrieffenstahl.com';
+  var btns=document.querySelectorAll('.copy-email-btn');
+  function confirm(){
+    btns.forEach(function(b){b.textContent='✓ Copied!'});
+    setTimeout(function(){btns.forEach(function(b){b.textContent='Copy email'})},3000);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(email).then(confirm).catch(confirm);
+  } else {
+    var ta=document.createElement('textarea');
+    ta.value=email;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy')}catch(e){}
+    document.body.removeChild(ta);
+    confirm();
+  }
+}
+
 // ── HELPER: go home then scroll to work ────────────
 function goHome(){
   go('home');
