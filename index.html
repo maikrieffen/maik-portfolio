@@ -301,6 +301,10 @@ ul{list-style:none}
 .iph-t{font-size:10px;letter-spacing:.1em;text-transform:uppercase;text-align:center;line-height:1.6;max-width:34ch}
 .iph-w{aspect-ratio:21/8}
 .iph-s{aspect-ratio:16/9}
+.cs-metrics{display:flex;gap:2rem;flex-wrap:wrap;margin:2rem 0 3rem}
+.cs-metric{display:flex;flex-direction:column;gap:.25rem}
+.metric-value{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:300;letter-spacing:-.03em;color:var(--text)}
+.metric-label{font-size:.8125rem;color:var(--text2);max-width:160px;line-height:1.4}
 .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
 .impact-grid{grid-template-columns:1fr 1fr}
 .ri{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 16px;transition:background .35s}
@@ -575,71 +579,105 @@ ul{list-style:none}
   <header class="ch">
     <div class="c">
       <div class="bc rv"><a onclick="goHome()">Work</a><span>→</span><span>Garantiemax</span></div>
-      <div class="ctag rv">UX Design Manager · 2023–Present</div>
-      <h1 class="ch1 rv d1">Garantiemax</h1>
-      <h2 class="ch2 rv d2">Product ecosystem for regulated insurance operations</h2>
-      <p class="csub rv d3">Garantiemax is a regulated insurance product ecosystem for kitchen and appliance protection products. My work spans two connected products: a customer-facing app and a Partner &amp; Admin Platform used by internal teams and external partners to create, manage, and review contracts.</p>
+      <div class="ctag rv">Lead Product Designer &amp; UX Manager</div>
+      <h1 class="ch1 rv d1">Garantiemax Product Ecosystem</h1>
+      <p class="csub rv d2">2.5 years. Two products. One designer building the UX foundation from scratch.</p>
       <div class="cmeta rv d3">
-        <div><div class="ml">Role</div><div class="mv">UX Design Manager</div></div>
-        <div><div class="ml">Timeline</div><div class="mv">Nov 2023–Present</div></div>
-        <div><div class="ml">Products</div><div class="mv">Platform · App</div></div>
-        <div><div class="ml">Domain</div><div class="mv">Regulated Insurance</div></div>
+        <div><div class="ml">Role</div><div class="mv">Lead Product Designer &amp; UX Manager</div></div>
+        <div><div class="ml">Timeline</div><div class="mv">Nov 2022 – Present</div></div>
+        <div><div class="ml">Products</div><div class="mv">Customer App · Admin &amp; Partner Platform</div></div>
+        <div><div class="ml">Domain</div><div class="mv">InsurTech · B2B · B2C</div></div>
       </div>
     </div>
   </header>
-  <div class="c" style="padding-top:clamp(48px,6vw,80px)"><div class="iph iph-w rv" style="margin-top:0;border-radius:16px">
+  <div class="c">
+    <div class="cs-metrics rv d1">
+      <div class="cs-metric">
+        <span class="metric-value">2 products redesigned</span>
+        <span class="metric-label">from non-functional to production</span>
+      </div>
+      <div class="cs-metric">
+        <span class="metric-value">1 design system</span>
+        <span class="metric-label">shared foundation across app and platform</span>
+      </div>
+      <div class="cs-metric">
+        <span class="metric-value">Solo to team</span>
+        <span class="metric-label">grew from sole designer to leading a junior designer</span>
+      </div>
+    </div>
+  </div>
+  <div class="c" style="padding-top:clamp(16px,2vw,24px)"><div class="iph iph-w rv" style="margin-top:0;border-radius:16px">
     <svg width="28" height="28" viewBox="0 0 32 32" fill="none" opacity=".3"><rect x="4" y="6" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 11h24" stroke="currentColor" stroke-width="1.5"/></svg>
     <div class="iph-t">Hero image — Garantiemax ecosystem overview or product spread</div>
   </div></div>
   <main class="cbody"><div class="c">
+
     <div class="csec">
       <div class="clayout">
-        <div class="slbl">Overview</div>
+        <div class="slbl">The starting point</div>
         <div class="rv">
-          <div class="ctitle">One ecosystem, two product contexts</div>
           <div class="cbody-t">
-            <p>The platform and app share the same underlying business logic but serve very different users. Partners and admins need efficient workflows, clear permissions, and reliable document handling. Customers need guided onboarding, contract clarity, and confidence that their protection is active. The design challenge was building one coherent system that worked for both.</p>
-          </div>
-          <div class="rgrid rv d1">
-            <div class="ri"><div class="rl">Core object</div><div class="rt">Contracts connect customers, partners, documents, products, states, and operational actions.</div></div>
-            <div class="ri"><div class="rl">Platform role</div><div class="rt">Create, manage, review, and support contract operations across partner and admin contexts.</div></div>
-            <div class="ri"><div class="rl">App role</div><div class="rt">Help customers understand onboarding, coverage, contract status, and required actions.</div></div>
-            <div class="ri"><div class="rl">Design focus</div><div class="rt">Translate insurance logic into product structures that scale across users and workflows.</div></div>
+            <p>Garantiemax is a regulated insurance product for kitchen and appliance protection. Customers manage their contracts and file claims through a mobile app. Dealers and internal admins manage those contracts through a B2B platform.</p>
+            <p>When I joined, neither product was working the way it needed to. The customer app had critical flows that didn't function — claims filing, the core value proposition, was broken. Back office handled customer claims manually by phone and email. The platform had been built by addition over time, with no design system, no file structure, and no handoff standard.</p>
+            <p>There was no UX designer before me. The previous setup had a PM doing design work.</p>
           </div>
         </div>
       </div>
     </div>
+
     <div class="csec">
       <div class="clayout">
-        <div class="slbl">Strategy</div>
+        <div class="slbl">How it was tackled</div>
         <div class="rv">
-          <div class="ctitle">Three decisions that shaped the system</div>
-          <div class="dlist">
-            <div class="di rv d1"><div class="dn">01</div><div class="dt"><strong>Clarified role separation</strong>Admin workflows and Partner workflows needed different levels of access, control, and responsibility.</div></div>
-            <div class="di rv d2"><div class="dn">02</div><div class="dt"><strong>Centered the system around contracts</strong>The contract became the shared anchor across customer onboarding, platform operations, documents, and status handling.</div></div>
-            <div class="di rv d3"><div class="dn">03</div><div class="dt"><strong>Created reusable product logic</strong>Patterns were designed to support current products while leaving room for future protection products and partner contexts.</div></div>
+          <div class="cbody-t">
+            <p>The app came first because it had to. A broken claims flow meant the product wasn't delivering its core promise. I rebuilt the app from the ground up — mapping information architecture, building a design system from scratch, writing detailed implementation tickets, and validating complex insurance onboarding flows with stakeholders before a single production screen was built.</p>
+            <p>The platform ran in parallel. While the app redesign was underway, I improved Platform 1.0 continuously — introducing components, cleaning file structure, and establishing patterns as features were added. That 2-year incremental improvement laid the foundation for what is now Platform 2.0: a full redesign using the same design language as the app, with shared base components and a standalone design system for each product.</p>
           </div>
         </div>
       </div>
     </div>
-    <!-- SUB-CASES SECTION -->
+
+    <div class="csec">
+      <div class="clayout">
+        <div class="slbl">Working structure</div>
+        <div class="rv">
+          <div class="cbody-t">
+            <p>For most of this engagement I worked alone, owning UX across both products and collaborating directly with the CTO and stakeholders. At one point a junior UX designer joined the team — that required a different kind of work: writing detailed Jira tickets with full interaction specs, flow documentation, and acceptance criteria so work could be executed without constant supervision. That junior designer has since been replaced by a more experienced one who can operate independently with product knowledge and direction alone. The difference reflects how much the system has matured — it's documented well enough that a capable designer can move fast within it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="csec" style="border-bottom:none">
       <div class="clayout">
-        <div class="slbl">Dive deeper</div>
+        <div class="slbl">The ecosystem</div>
         <div class="rv">
-          <div class="ctitle">Two products within the ecosystem</div>
-          <p style="font-size:16px;color:var(--text2);line-height:1.75;font-weight:300;margin-bottom:28px">Garantiemax is built across two distinct products with different users, different UI languages, and different complexity levels, but a shared data foundation and design system.</p>
           <div class="cards" style="gap:16px">
+
+            <div class="pcard" onclick="go('app')" style="min-height:280px;cursor:pointer">
+              <div class="pi">
+                <div class="ptop">
+                  <div class="pbadge"><span class="pbadge-dot"></span>B2C · Mobile</div>
+                  <div class="ptitle" style="font-size:clamp(22px,2.8vw,34px)">Customer App (App 2.0)</div>
+                  <div class="pdesc">The end-user product. Customers manage contracts, file claims, access documents, and explore products. Rebuilt from a non-functional base into a structured, fully working mobile-first experience.</div>
+                  <div class="pills"><span class="pill">B2C</span><span class="pill">Mobile App</span><span class="pill">Consumer UX</span></div>
+                </div>
+                <span class="plink">View case study →</span>
+              </div>
+              <div class="pv" style="background:var(--surface);display:flex;align-items:center;justify-content:center">
+                <div style="color:var(--text3);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:24px">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="margin:0 auto 12px;opacity:.3"><rect x="9" y="2" width="14" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="26" r="1.5" fill="currentColor" opacity=".5"/></svg>
+                  [ App screenshots ]
+                </div>
+              </div>
+            </div>
 
             <div class="pcard" onclick="go('platform')" style="min-height:280px;cursor:pointer">
               <div class="pi">
                 <div class="ptop">
-                  <div style="display:flex;justify-content:space-between;align-items:flex-start">
-                    <div class="pbadge"><span class="pbadge-dot"></span>Product 01</div>
-                    <span class="pnum">→</span>
-                  </div>
-                  <div class="ptitle" style="font-size:clamp(22px,2.8vw,34px)">Partner &amp; Admin Platform</div>
-                  <div class="pdesc">CRM-style B2B tool for dealers, sellers, and admins. Data-dense workflows, role-based views, and scalable layout templates for contracts, claims, and customer management.</div>
+                  <div class="pbadge"><span class="pbadge-dot"></span>B2B · CRM</div>
+                  <div class="ptitle" style="font-size:clamp(22px,2.8vw,34px)">Admin &amp; Partner Platform (Platform 2.0)</div>
+                  <div class="pdesc">The operational backbone. Internal admins and external partners use it to create, manage, and review insurance contracts. Redesigned around role-based access, structured handoff, and a proper design system.</div>
                   <div class="pills"><span class="pill">B2B Platform</span><span class="pill">Role-based UX</span><span class="pill">Data-dense</span></div>
                 </div>
                 <span class="plink">View case study →</span>
@@ -652,32 +690,10 @@ ul{list-style:none}
               </div>
             </div>
 
-            <div class="pcard" onclick="go('app')" style="min-height:280px;cursor:pointer">
-              <div class="pi">
-                <div class="ptop">
-                  <div style="display:flex;justify-content:space-between;align-items:flex-start">
-                    <div class="pbadge"><span class="pbadge-dot"></span>Product 02</div>
-                    <span class="pnum">→</span>
-                  </div>
-                  <div class="ptitle" style="font-size:clamp(22px,2.8vw,34px)">Customer App</div>
-                  <div class="pdesc">The B2C mobile experience for end customers. Simplifying insurance logic into clear, trustworthy flows covering contracts, claims, and coverage in one place.</div>
-                  <div class="pills"><span class="pill">Mobile App</span><span class="pill">B2C</span><span class="pill">Consumer UX</span></div>
-                </div>
-                <span class="plink">View case study →</span>
-              </div>
-              <div class="pv" style="background:var(--surface);display:flex;align-items:center;justify-content:center">
-                <div style="color:var(--text3);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:24px">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="margin:0 auto 12px;opacity:.3"><rect x="9" y="2" width="14" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="26" r="1.5" fill="currentColor" opacity=".5"/></svg>
-                  [ App screenshots ]
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
-
 
   </div></main>
   <div style="border-top:1px solid var(--border);padding:28px 0"><div class="c" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px"><button class="bg" onclick="goHome()">← Back to work</button><button class="bg" onclick="go('approach')">My approach <span class="ar">→</span></button></div></div>
@@ -723,7 +739,7 @@ ul{list-style:none}
 <script>
 // ── COPY EMAIL ─────────────────────────────────────
 function copyEmail(){
-  var email='maik@mrieffenstahl.com';
+  var email='maikrieffenstahl@gmail.com';
   var btns=document.querySelectorAll('.copy-email-btn');
   function confirm(){
     btns.forEach(function(b){b.textContent='✓ Copied!'});
