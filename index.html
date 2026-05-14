@@ -305,6 +305,12 @@ ul{list-style:none}
 .cs-metric{display:flex;flex-direction:column;gap:.25rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
 .metric-value{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:300;letter-spacing:-.03em;color:var(--text)}
 .metric-label{font-size:.8125rem;color:var(--text2);max-width:160px;line-height:1.4}
+.cs-insight{background:var(--surface);border-left:3px solid var(--accent);padding:1.25rem 1.5rem;margin:1.5rem 0;display:flex;gap:1rem;align-items:flex-start;border-radius:0 4px 4px 0}
+.insight-marker{font-size:1.125rem;flex-shrink:0;margin-top:.1rem}
+.cs-insight p{margin:0;font-size:.9375rem;line-height:1.65;color:var(--text)}
+.cs-option{margin:1.5rem 0}
+.option-label{font-size:.8125rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text2);margin:0 0 .75rem;font-weight:500}
+.option-note{font-size:.9rem;color:var(--text2);margin-top:.75rem}
 .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
 .impact-grid{grid-template-columns:1fr 1fr}
 .ri{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 16px;transition:background .35s}
@@ -869,31 +875,173 @@ observe();
     <div class="c">
       <div class="bc rv">
         <a onclick="goHome()">Work</a><span>→</span>
-        <a onclick="go('garantiemax')">Garantiemax</a><span>→</span>
+        <a onclick="go(‘garantiemax’)">Garantiemax</a><span>→</span>
         <span>Customer App</span>
       </div>
-      <div class="ctag rv">Mobile App · B2C · 2023–Present</div>
+      <div class="ctag rv">InsurTech · B2C · 2023–Present</div>
       <h1 class="ch1 rv d1">Customer App</h1>
-      <h2 class="ch2 rv d2">Customer-facing insurance app simplifying complex contract logic</h2>
-      <p class="csub rv d3">A guided app experience that helps customers activate, understand, and manage protection products while staying aligned with the platform’s contract and backend states.</p>
+      <p class="csub rv d2">A functional rebuild. From broken claims filing to a complete, documented, production-ready mobile product.</p>
       <div class="cmeta rv d3">
-        <div><div class="ml">Role</div><div class="mv">UX Lead</div></div>
-        <div><div class="ml">Type</div><div class="mv">Mobile App · B2C</div></div>
-        <div><div class="ml">Users</div><div class="mv">End customers</div></div>
-        <div><div class="ml">Status</div><div class="mv">Active / Ongoing</div></div>
+        <div><div class="ml">Role</div><div class="mv">Lead Product Designer &amp; UX Manager</div></div>
+        <div><div class="ml">Timeline</div><div class="mv">2023 – Present</div></div>
+        <div><div class="ml">Platform</div><div class="mv">iOS · Android · Mobile-first</div></div>
+        <div><div class="ml">Domain</div><div class="mv">InsurTech · B2C</div></div>
       </div>
     </div>
   </header>
-  <div class="c" style="padding-top:clamp(48px,6vw,80px)"><div class="iph iph-w rv" style="margin-top:0;border-radius:16px">
+  <div class="c">
+    <div class="cs-metrics rv d1">
+      <div class="cs-metric">
+        <span class="metric-value">App 1.0 → 2.0</span>
+        <span class="metric-label">rebuilt from non-functional to production</span>
+      </div>
+      <div class="cs-metric">
+        <span class="metric-value">Claims work</span>
+        <span class="metric-label">back office no longer files manually</span>
+      </div>
+      <div class="cs-metric">
+        <span class="metric-value">AI-assisted</span>
+        <span class="metric-label">Figma Make prototype validated before screens were built</span>
+      </div>
+    </div>
+  </div>
+  <div class="c" style="padding-top:clamp(16px,2vw,24px)"><div class="iph iph-w rv" style="margin-top:0;border-radius:16px">
     <svg width="28" height="28" viewBox="0 0 32 32" fill="none" opacity=".3"><rect x="9" y="2" width="14" height="28" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="26" r="1.5" fill="currentColor" opacity=".5"/></svg>
-    <div class="iph-t">[ Mobile app screens — onboarding, contract overview, documents ]</div>
+    <div class="iph-t">Mobile app screens, onboarding, contract overview, documents</div>
   </div></div>
   <main class="cbody"><div class="c">
-    <div class="csec"><div class="clayout"><div class="slbl">Overview</div><div class="rv"><div class="ctitle">Customer-facing insurance app simplifying complex contract logic</div><div class="cbody-t"><p>The Customer App translates Garantiemax insurance logic into a guided customer experience. Customers onboard, understand their contract, review protection details, and act on required steps, without needing to understand the operational system behind it. The contract is the central object, connecting onboarding, coverage, documents, status, and legal confirmations.</p></div><div class="rgrid rv d1"><div class="ri"><div class="rl">Primary user</div><div class="rt">Customers buying or activating protection products.</div></div><div class="ri"><div class="rl">Core object</div><div class="rt">The contract as the customer’s source of truth.</div></div><div class="ri"><div class="rl">Main challenge</div><div class="rt">Make insurance states understandable without oversimplifying legal logic.</div></div><div class="ri"><div class="rl">System link</div><div class="rt">Customer states must align with platform and backend states.</div></div></div></div></div></div>
-    <div class="csec"><div class="clayout"><div class="slbl">Problem</div><div class="rv"><div class="ctitle">Customers needed clarity at moments of uncertainty</div><div class="cbody-t"><p>Insurance products require trust, legal precision, and clear status communication. Customers don’t think in backend states, risk carriers, or document rules. They need to know what they bought, what is active, what is missing, and what to do next.</p><p>The app had to simplify this complexity while staying consistent with the same contract logic used by the Partner &amp; Admin Platform. Simplification that broke that alignment would create support problems and trust issues downstream.</p></div></div></div></div>
-    <div class="csec"><div class="clayout"><div class="slbl">Key Decisions</div><div class="rv"><div class="ctitle">Decisions that connected customer clarity with system reliability</div><div class="dlist"><div class="di rv d1"><div class="dn">01</div><div class="dt"><strong>Contract as the central object</strong>The app experience centres on the contract because it is the customer’s link between product, coverage, legal documents, and support, not a dashboard of unconnected features.</div></div><div class="di rv d2"><div class="dn">02</div><div class="dt"><strong>Guided onboarding over free navigation</strong>Activation steps are structured to reduce missed information and make legal confirmations explicit. Letting customers skip through freely would have broken required consent flows.</div></div><div class="di rv d3"><div class="dn">03</div><div class="dt"><strong>Backend-aligned states</strong>Customer UI states were designed to map back to operational states, so support teams and platform users see the same reality. This was a deliberate constraint, not just a technical detail.</div></div><div class="di rv d4"><div class="dn">04</div><div class="dt"><strong>Plain-language status communication</strong>Insurance states were rewritten as understandable customer messages while preserving the underlying legal meaning. The translation was product work, not just copy editing.</div></div></div></div></div></div>
-    <div class="csec"><div class="clayout"><div class="slbl">System Solution</div><div class="rv"><div class="ctitle">A clearer customer layer on top of insurance operations</div><div class="cbody-t"><p>The solution creates an app structure that moves customers from activation to understanding, guided where required, clear at every status point, and aligned with the same contract logic that runs the operational platform.</p></div><div class="rgrid rv d1"><div class="ri"><div class="rl">Onboarding</div><div class="rt">Step-based flow for activation, confirmations, and required product information.</div></div><div class="ri"><div class="rl">Contract view</div><div class="rt">Central screen for coverage, status, product details, and documents.</div></div><div class="ri"><div class="rl">Status logic</div><div class="rt">Customer-facing states aligned with backend and platform rules.</div></div><div class="ri"><div class="rl">Legal moments</div><div class="rt">Consent and document requirements surfaced at the right point in the journey.</div></div></div></div></div></div>
-    <div class="csec" style="border-bottom:none"><div class="clayout"><div class="slbl">Impact &amp; Constraints</div><div class="rv"><div class="ctitle">A customer experience aligned with the wider ecosystem</div><div class="cbody-t"><p>The app creates a clearer customer layer for the same contract logic used by the operational platform, aligning product, design, and engineering around how customer states map to backend and admin workflows.</p></div><div class="rgrid rv d1"><div class="ri"><div class="rl">Clarity</div><div class="rt">Customers get a clear path through activation and contract review.</div></div><div class="ri"><div class="rl">Consistency</div><div class="rt">App states map to platform states and support workflows.</div></div><div class="ri"><div class="rl">Trust</div><div class="rt">Legal and document moments are explicit rather than hidden.</div></div><div class="ri"><div class="rl">Scale</div><div class="rt">The structure supports future products and coverage types.</div></div></div><p class="cbody-t" style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">Constraints: legal requirements limited how much onboarding and document flows could be simplified. Customer-facing states depended on backend readiness and existing contract logic. Because the work was ongoing, measurable impact data including completion rate, support reduction, and activation time was limited at time of writing.</p></div></div></div>
+
+    <div class="csec">
+      <div class="clayout">
+        <div class="slbl">Overview</div>
+        <div class="rv">
+          <div class="cbody-t">
+            <p>The Garantiemax Customer App is the B2C product for end users. Customers use it to manage their kitchen appliance insurance contracts, file claims, access documents, and browse products. When the redesign started, the app was not delivering on its core promise. Claims filing was broken, flows were buggy, and back office staff were handling customer requests manually by phone and email. The redesign was not a visual refresh. It was a functional rebuild.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="csec">
+      <div class="clayout">
+        <div class="slbl">Challenge</div>
+        <div class="rv">
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px">The app’s core value proposition wasn’t working</h2>
+          <div class="cbody-t" style="margin-bottom:28px">
+            <p>Claims filing, the main reason to use the app beyond contract storage, was broken or unreliable. Back office compensated by handling claims manually. The product had a functioning shell but not a functioning product.</p>
+          </div>
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px;margin-top:28px">Insurance onboarding across three product variants</h2>
+          <div class="cbody-t" style="margin-bottom:28px">
+            <p>The app serves customers across three different insurance products: VZUG, Signal Iduna (legacy), and Rheinland (new, with German and Austrian legal variants). Each has different editable fields, different confirmation logic, different document requirements, and different legal wording. This required insurance specialist input. Design couldn’t be done in isolation.</p>
+          </div>
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px;margin-top:28px">No foundation to build on</h2>
+          <div class="cbody-t">
+            <p>There was no design system, no structured file, no component library. The existing Figma workspace was a scattered canvas. Every new screen was designed from scratch without a shared reference.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="csec">
+      <div class="clayout">
+        <div class="slbl">Approach</div>
+        <div class="rv">
+
+          <div class="rv" style="margin-bottom:36px">
+            <div class="ap-num">Stage 1</div>
+            <div class="ap-title">Architecture before screens</div>
+            <div class="cbody-t">
+              <p>Before opening Figma, I mapped the full information architecture of the app in Miro and FigJam: every section, every flow, every state. This was then translated into Jira tickets organized by flow and section. Each ticket included the screens needed, interaction logic, edge cases, and acceptance criteria. This structure meant development could run alongside design without waiting for a designer to explain every detail.</p>
+            </div>
+          </div>
+
+          <div class="rv d1" style="margin-bottom:36px">
+            <div class="ap-num">Stage 2</div>
+            <div class="ap-title">Figma Make prototype for onboarding validation</div>
+            <div class="cs-insight">
+              <span class="insight-marker">💡</span>
+              <p>The new insurance onboarding flows (Rheinland, multi-country) needed stakeholder and insurance specialist sign-off before any real screens were built. I used Figma Make to build an interactive prototype: 150+ prompt iterations, then used ChatGPT to extract and refine the generated code when I hit the token limit. Another ~50 iterations to reach the final validated flow. It wasn’t perfect output, but it was fast enough to get the right people in a room looking at the right interactions before a single production screen existed. The flow was approved. Then I built the screens.</p>
+            </div>
+          </div>
+
+          <div class="rv d1" style="margin-bottom:36px">
+            <div class="ap-num">Stage 3</div>
+            <div class="ap-title">Design system built from the ground up</div>
+            <div class="cbody-t">
+              <p>I analyzed every component, interaction, and micro-interaction in the existing app before designing anything new. The design system was built as a byproduct of this analysis, not planned upfront, but extracted from what the product actually needed. Base components (buttons, inputs, alerts, toasts, switches, checkboxes) are now shared with the platform design system to maintain visual consistency across the ecosystem.</p>
+            </div>
+          </div>
+
+          <div class="rv d1" style="margin-bottom:36px">
+            <div class="ap-num">Stage 4</div>
+            <div class="ap-title">From scattered canvas to structured handoff</div>
+            <div class="cs-option">
+              <h4 class="option-label">App 1.0, before</h4>
+              <div class="iph iph-s">
+                <div class="iph-t">Original Figma file, single canvas, no flow order</div>
+              </div>
+              <p class="option-note">The original Figma file was a single canvas with screens scattered by feature, no flow order, no state coverage, no naming convention. Developers navigated it by memory or by asking.</p>
+            </div>
+            <div class="cs-option">
+              <h4 class="option-label">App 2.0, Master Handoff</h4>
+              <div class="iph iph-s">
+                <div class="iph-t">Redesigned Master Handoff file, structured by flow and section</div>
+              </div>
+              <p class="option-note">The redesigned file has a dedicated Master Handoff page. Flows are organized as sections: sign in, onboarding, dashboard, claim filing, contract detail, account settings. Each section is ordered as a flowchart: screen by screen, state by state, breakpoint by breakpoint (mobile through desktop). Every edge case is documented alongside the happy path.</p>
+            </div>
+          </div>
+
+          <div class="rv d2">
+            <div class="ap-num">Stage 5</div>
+            <div class="ap-title">Working with a junior designer</div>
+            <div class="cbody-t">
+              <p>Part of the approach was enabling another person to work within the system. A junior designer was brought in at one point. Making that work required translating flows into highly detailed tickets with full interaction specs, screen lists, and acceptance criteria, so execution could happen without constant check-ins. That level of documentation became a standard, not an exception.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="csec">
+      <div class="clayout">
+        <div class="slbl">Results</div>
+        <div class="rv">
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px">🚀 The app works</h2>
+          <div class="cbody-t" style="margin-bottom:28px">
+            <p>Claims filing works. Customers submit claims through the app. Back office no longer handles this manually. The product delivers what it promises.</p>
+          </div>
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px;margin-top:28px">📱 A complete, navigable product</h2>
+          <div class="cbody-t" style="margin-bottom:28px">
+            <p>The app covers every user journey: contract management, claim filing, document access, onboarding across all insurance variants, account settings. Every screen has full state coverage. Developers have a single file to navigate, not a scattered canvas to interpret.</p>
+          </div>
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px;margin-top:28px">🤖 AI-assisted validation as a design method</h2>
+          <div class="cbody-t" style="margin-bottom:28px">
+            <p>Using Figma Make and ChatGPT to prototype and validate a complex multi-variant onboarding flow before building screens cut the iteration cycle significantly. Stakeholders reviewed working interactions, not static mockups. This approach is now part of how new flows get validated.</p>
+          </div>
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px;margin-top:28px">🧱 Design system shared with the platform</h2>
+          <div class="cbody-t">
+            <p>The App Design System 2.0 shares base components with the Platform Design System 2.0. Visual consistency across B2C and B2B surfaces is maintained without duplicating design decisions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="csec" style="border-bottom:none">
+      <div class="clayout">
+        <div class="slbl">Takeaways</div>
+        <div class="rv">
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px">Prototype to validate, then design to implement</h2>
+          <div class="cbody-t" style="margin-bottom:28px">
+            <p>Using AI tooling to build a rough but interactive prototype before committing to final screens is a legitimate and efficient design method. The goal isn’t perfect output from the prototype. It’s getting the right stakeholders reacting to the right interactions early enough to change direction cheaply. Figma Make made that possible at a complexity level that would have taken weeks to wireframe traditionally.</p>
+          </div>
+          <h2 style="font-size:clamp(17px,2vw,22px);font-weight:500;color:var(--text);letter-spacing:-.02em;line-height:1.3;margin-bottom:10px;margin-top:28px">Documentation is a design deliverable</h2>
+          <div class="cbody-t">
+            <p>Writing detailed Jira tickets with interaction specs and acceptance criteria is design work. It determines what gets built, how it gets built, and whether a junior designer can execute it without supervision. The quality of that documentation directly affects the quality of the final product.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div></main>
   <div style="border-top:1px solid var(--border);padding:28px 0"><div class="c" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
