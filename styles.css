@@ -31,7 +31,6 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 p{margin:0}
-
 /* Sheet */
 .sheet{position:relative;z-index:1;max-width:1240px;margin:48px auto;padding:56px 48px 48px;
   background-color:var(--paper);
@@ -40,18 +39,15 @@ p{margin:0}
   border-radius:16px;
   box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.5)}
 .sheet--narrow{max-width:800px;padding:56px 56px 48px}
-
 /* Type */
 .label{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
 .label--accent{color:var(--accent)}
 .name{font:700 clamp(30px,2.9vw,40px)/1.08 var(--sans);letter-spacing:-.02em;text-transform:uppercase;margin:0}
-.title{display:none;font:500 14px/1.4 var(--sans);color:var(--ink-60);margin-top:10px}
-.title span{display:block}
+.m-only{display:none}
 .lede{font:400 17px/1.5 var(--sans);max-width:40ch;color:var(--ink)}
 .h2{font:600 clamp(24px,2.2vw,30px)/1.2 var(--sans);letter-spacing:-.015em;margin:12px 0 16px}
 .body{color:var(--ink-60)}
 .hl{background:var(--accent-soft);padding:0 .22em;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-
 /* Two column block */
 .grid{display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);gap:64px;align-items:start}
 .identity{position:sticky;top:48px;min-height:calc(100vh - 96px);display:flex;flex-direction:column;gap:26px;min-width:0}
@@ -60,10 +56,8 @@ p{margin:0}
 .polaroid{width:clamp(200px,30vh,220px);background:var(--white);padding:12px;border-radius:4px;
   box-shadow:0 12px 32px rgba(0,0,0,.18);transform:rotate(-2deg);position:relative;margin:6px 0 4px 6px}
 .polaroid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px;background:var(--box)}
-.polaroid .pcap{position:relative;margin-top:10px;text-align:left;padding-right:34px;font:500 9px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-60)}
+.polaroid .pcap{position:relative;margin-top:10px;text-align:left;font:500 9px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-60)}
 .polaroid .pcap span{display:block;white-space:nowrap}
-.polaroid .pcap .year{position:absolute;right:0;top:0}
-.polaroid .pcap .pcap__mobile{display:none}
 .actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:var(--ink);
   border:1px solid rgba(11,22,34,.18);background:rgba(255,255,255,.5)}
@@ -74,15 +68,13 @@ p{margin:0}
 .btn--primary{background:var(--ink);color:var(--paper)}
 .btn--ghost{border-color:rgba(11,22,34,.22);color:var(--ink);background:rgba(255,255,255,.4)}
 .btn--link{padding:0;border:0;background:none;color:var(--accent);font:500 15px var(--sans);letter-spacing:0}
-
 /* Logo tile (resume) */
 .tile{flex:0 0 40px;width:40px;height:40px;border-radius:10px;background:var(--box);display:grid;place-items:center;overflow:hidden;
   font:700 12px var(--sans);color:var(--ink-60);letter-spacing:-.02em}
 .tile img{width:100%;height:100%;object-fit:contain;padding:6px;background:var(--white)}
 .tile--flush img{padding:0;object-fit:cover}
-
 /* Work cards */
-.work{display:flex;flex-direction:column;gap:44px;margin-top:16px}
+.work{display:flex;flex-direction:column;gap:52px;margin-top:16px}
 .card{display:block;-webkit-tap-highlight-color:transparent;transition:opacity .15s ease}
 .card:hover{opacity:.92}
 .card:active{opacity:.7}
@@ -94,40 +86,42 @@ p{margin:0}
   font:500 11px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-40)}
 .card .cap{font:400 17px/1.5 var(--sans);margin:16px 0 8px;color:var(--ink)}
 .card .meta{font:500 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-
 /* Full width sections */
-.section{margin-top:144px}
-.section + .section{margin-top:112px}
-.belief{font:400 19px/1.55 var(--sans);max-width:60ch;margin-top:4px}
-.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 40px;margin-top:36px}
+.section{margin-top:176px}
+.section + .section{margin-top:144px}
+.belief{font:400 19px/1.55 var(--sans);max-width:60ch;margin-top:8px}
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 40px;margin-top:48px}
 .pr .num{font:500 12px/1 var(--mono);letter-spacing:.14em;color:var(--accent);margin-bottom:10px}
 .pr h3{font:600 16px/1.35 var(--sans);margin:0 0 6px}
 .pr p{font-size:15px;color:var(--ink-60)}
-.traits{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 24px;margin-top:28px}
+.traits{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:36px 26px;margin-top:40px}
 .tr h3{font:600 15px/1.35 var(--sans);margin:0 0 6px}
 .tr p{font-size:14px;color:var(--ink-60)}
-.desk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px}
+.desk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:32px}
 .desk .box{aspect-ratio:4/3}
 .desk p{font-size:15px;color:var(--ink-60);margin-top:12px}
 .desk b{color:var(--ink);font-weight:600}
-
+.more-note{font-size:15px;color:var(--ink-60);margin-top:28px}
+.more-link{margin-top:36px}
+.deck__dots{display:none}
 /* Footer */
-.foot{margin-top:112px;padding-top:8px}
+.foot{margin-top:144px;padding-top:8px}
 .foot .lede{max-width:52ch}
 .foot .actions{margin-top:20px}
 .foot .fine{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;margin-top:40px}
 .foot .fine .label{margin:0}
 .foot .copy{font-size:13px;color:var(--ink-40)}
-
 /* Letter and resume pages */
 .back{display:inline-flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);letter-spacing:.06em;color:var(--ink-60)}
 .back svg{width:12px;height:12px}
 .letter-head{display:flex;justify-content:space-between;gap:16px;margin:44px 0 20px;flex-wrap:wrap}
 .letter h1{font:600 clamp(28px,3vw,36px)/1.15 var(--sans);letter-spacing:-.02em;margin:0 0 28px}
-.letter p{font-size:17px;line-height:1.6;color:var(--ink-60);margin:0 0 22px}
-.letter p b{color:var(--ink);font-weight:600;display:block;margin-bottom:4px}
+.letter > p{font-size:17px;line-height:1.6;color:var(--ink-60);margin:0 0 22px}
+.letter > p b{color:var(--ink);font-weight:600;display:block;margin-bottom:4px}
 .letter .sig{font:400 17px var(--sans);color:var(--ink);margin-top:36px}
-
+.recap{margin-top:52px;padding-top:36px;border-top:1px solid var(--rule)}
+.recap .principles{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 32px;margin-top:24px}
+.recap .pr p{font:400 15px/1.6 var(--sans);color:var(--ink-60);margin:0}
 .resume h1{font:700 30px/1.15 var(--sans);letter-spacing:-.02em;margin:0 0 6px}
 .resume .sub{font-size:15px;color:var(--ink-60)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
@@ -161,7 +155,6 @@ p{margin:0}
 .resume .co a:hover,.resume .role a:hover{text-decoration-color:var(--accent)}
 .float-btn{position:fixed;top:24px;right:24px;z-index:5;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 .float-btn.btn--primary{background:var(--white);color:var(--ink)}
-
 /* Responsive */
 @media (max-width:1180px){.sheet{margin:32px 24px}}
 @media (max-width:1023px){
@@ -169,12 +162,9 @@ p{margin:0}
   .grid{grid-template-columns:1fr;gap:56px}
   .identity{position:static;min-height:0;gap:24px;align-items:center;text-align:center}
   .identity__foot{display:none}
-  .hero{align-items:center;gap:22px}
-  .title{display:block;font-size:15px;margin-top:0}
+  .hero{align-items:center;gap:20px}
   .polaroid{margin:4px 0 0}
-  .polaroid .pcap{text-align:center;padding-right:0}
-  .polaroid .pcap .pcap__desk{display:none}
-  .polaroid .pcap .pcap__mobile{display:block}
+  .polaroid .pcap{text-align:center}
   .identity .lede{margin:0 auto}
   .actions{justify-content:center}
   .foot{text-align:center}
@@ -182,8 +172,8 @@ p{margin:0}
   .foot .actions,.foot .fine{justify-content:center}
   .principles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .traits{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .section{margin-top:104px}
-  .section + .section{margin-top:88px}
+  .section{margin-top:120px}
+  .section + .section{margin-top:100px}
   .float-btn{position:static;margin-bottom:24px;box-shadow:none}
 }
 @media (max-width:767px){
@@ -199,20 +189,40 @@ p{margin:0}
   .btn--link{font-size:16px}
   .work{gap:40px}
   .card .cap{font-size:16px}
-  .traits{gap:24px}
+  .m-only{display:block}
   .tr h3{font-size:16px}
   .tr p{font-size:15px}
   .pr p{font-size:15px}
+  .pr--more{display:none}
+  .recap .principles{grid-template-columns:1fr}
+  /* How I operate: a swipeable deck. Front card sharp, the ones behind blurred. */
+  .deck{position:relative}
+  .traits[data-deck]{display:flex;gap:0;margin-top:26px;padding:10px 0 26px;
+    overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;
+    scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+  .traits[data-deck]::-webkit-scrollbar{display:none}
+  .traits[data-deck]::before,.traits[data-deck]::after{content:"";flex:0 0 6%}
+  .traits[data-deck] .tr{flex:0 0 88%;scroll-snap-align:center;scroll-snap-stop:always;
+    background:var(--white);border:1px solid var(--rule);border-radius:16px;
+    padding:26px 22px;min-height:200px;box-shadow:0 14px 34px rgba(11,22,34,.13);
+    transform-origin:50% 50%;will-change:transform,filter,opacity}
+  .traits[data-deck] .tr h3{font-size:19px;line-height:1.3;margin-bottom:8px}
+  .traits[data-deck] .tr p{font-size:15px}
+  .deck__dots{display:flex;justify-content:center;gap:2px;margin-top:-8px}
+  .deck__dot{width:26px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center;
+    -webkit-tap-highlight-color:transparent}
+  .deck__dot::after{content:"";width:7px;height:7px;border-radius:99px;background:rgba(11,22,34,.22);
+    transition:width .2s ease,background .2s ease}
+  .deck__dot.is-on::after{width:22px;background:var(--ink)}
   .desk{gap:28px}
-  .principles,.traits,.desk{grid-template-columns:1fr}
+  .principles,.desk{grid-template-columns:1fr}
   .box{padding:16px;aspect-ratio:4/3}
   .kv{grid-template-columns:1fr;gap:2px 0}
   .kv dd{margin-bottom:10px}
-  .section{margin-top:80px}
-  .section + .section{margin-top:64px}
-  .foot{margin-top:72px}
+  .section{margin-top:88px}
+  .section + .section{margin-top:72px}
+  .foot{margin-top:80px}
 }
-
 /* Print: the resume PDF comes from this page */
 @media print{
   @page{size:A4;margin:14mm 16mm}

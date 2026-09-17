@@ -14,33 +14,33 @@
 <body>
 <main class="sheet sheet--narrow letter">
   <a class="back" href="index.html"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 2.5 3.5 6l4 3.5"/></svg> Back to home</a>
-
   <div class="letter-head">
     <p class="label">From the desk of Maik Rieffenstahl</p>
     <p class="label">September 2026</p>
   </div>
-
   <h1>I learned the manual way. Now the machines do the manual part.</h1>
-
   <p>Hi. If you are here, you have probably seen the work. This page is about how it gets made, and why that matters if you are thinking about hiring me.</p>
-
   <p><b>I did the work by hand first.</b>Between 2023 and mid 2026 I built two design systems for GARANTIEMAX atom by atom, ran 426 Jira tickets across two boards, mapped every flow before opening Figma and drew the handoff frames myself. At Raptive, before Figma had a Dev Mode, I documented components on manual annotation sheets: spacing, states, behaviour, one sheet at a time. None of it was glamorous. All of it taught me what a working system actually costs, and where the shortcuts hide.</p>
-
   <p><b>That is why I can tell when the machine is wrong.</b>When I audited both GARANTIEMAX systems in July 2026 with a deterministic extraction, I could read every hardcoded value in the first system and know exactly which shortcut had produced it, because I had taken that shortcut under MVP pressure two years earlier. The same applies to AI output. A generated component, a drafted ticket or a prototype is only as good as the person judging it, and that judgment comes from having done the task without help.</p>
-
   <p><b>The screen is the smallest part of the system.</b>Insurance coverage that activates on delivery, not on a click, so no screen may ever imply otherwise. A backend that still returns a binary status while the product needs six. Admins and partners sharing one data model with different rights. A swimming club whose parents discover a course on Instagram, phone the office for reassurance and then book. Every product I have worked on was decided outside the interface first. I map the objects, roles, rules and constraints before I design, because that is where most UX problems actually live.</p>
-
   <p><b>Limited budget is a constraint, not an excuse.</b>Wasserfreunde Spandau 04 has no product team and no budget line for design. In April 2026 an Instagram funnel with 51 tracked clicks produced 20 course bookings and about 5,000 euros in estimated revenue. A membership campaign has 38 tracked sign-ups so far. Attribution is partial, and I say so. The point is not the number. It is that a clear offer, a short path and respect for how people actually behave work at any budget, if someone structures them.</p>
-
   <p><b>AI took the tedious part. It did not take the decisions.</b>I have worked with AI since summer 2024, first for my own work, then with Figma Make in its first months, then in the company workflow from early 2026. Since mid 2026 my workflow is AI-integrated end to end: a Claude project with a data layer for product facts, seven Figma skills my team runs for reviews and handoff checks, Jira tickets written and updated programmatically, both design systems extracted and diffed per release, a company-wide knowledge base anyone at GARANTIEMAX can set up in five minutes. Documentation, extraction, first drafts, test coverage: the machines do that now, and they do it faster than I ever did. Explaining two options to the CEO and what each will cost, deciding whether a modal or a side sheet fits an admin’s day, noticing that a status colour will fail contrast for someone: that is still mine, and it gets more of my time than it ever did.</p>
-
   <p><b>What that buys you.</b>Less of my time goes into producing and more into weighing. Proof arrives as working prototypes, not slide decks. Numbers are measured, not eyeballed, and when they are estimates they are labelled. And you get someone who has run the manual version of every process he now automates, so nothing is delegated to a tool that the tool cannot actually do.</p>
-
   <p>Thanks for reading this far.</p>
   <p class="sig">Maik</p>
-
+  <div class="recap" id="principles">
+    <p class="label">The six principles in short</p>
+    <div class="principles">
+      <div class="pr"><div class="num">01</div><h3>Hand first, then tools.</h3><p>Two design systems, 426 tickets and hundreds of spec sheets built by hand. That is why I can judge what AI gives me now.</p></div>
+      <div class="pr"><div class="num">02</div><h3>Systems grow with the product.</h3><p>The first system was mobile only because the app came first. The platform added desktop and a second system. Then I aligned both: 94 shared token names, 26 shared code components.</p></div>
+      <div class="pr"><div class="num">03</div><h3>The screen is the smallest part.</h3><p>Legal rules, backend limits, roles and budgets decide most of a product before the first frame. I map those first.</p></div>
+      <div class="pr"><div class="num">04</div><h3>Budget is a constraint, not an excuse.</h3><p>A sports club with no design budget still got a booking path that converts, and honest numbers to show for it.</p></div>
+      <div class="pr"><div class="num">05</div><h3>Machines draft, people decide.</h3><p>Documentation, extraction, first drafts and tests are automated. Trade-offs, taste and the conversation with the CEO are not.</p></div>
+      <div class="pr"><div class="num">06</div><h3>I report what happened, not what looks good.</h3><p>Estimates are labelled as estimates. A result I only partly caused is reported that way. That is what makes the other numbers credible.</p></div>
+    </div>
+  </div>
   <footer class="foot">
-    <p class="lede">Reading this for a project? Email me, I would rather talk than send a deck.</p>
+    <p class="lede">Tell me the part of your product that is not working. I will tell you what I would look at first. I would rather have that conversation than send a deck.</p>
     <div class="actions">
       <button class="btn btn--primary" type="button" data-copy-email><span class="t">Copy email</span></button>
       <a class="btn btn--ghost" href="https://www.linkedin.com/in/maik-sebastian-rieffenstahl/" target="_blank" rel="noopener">LinkedIn</a>
