@@ -1,0 +1,229 @@
+/* Maik-Sebastian Rieffenstahl, portfolio 2026. Paper sheet on a dark blue mat. */
+:root{
+  --mat:#0A1E2B;
+  --mat-line:rgba(255,255,255,.055);
+  --paper:#F6F5F2;
+  --dot:rgba(11,22,34,.11);
+  --ink:#0B1622;
+  --ink-60:rgba(11,22,34,.66);
+  --ink-40:rgba(11,22,34,.45);
+  --muted:#6B7A88;
+  --rule:rgba(11,22,34,.10);
+  --accent:#1977A2;
+  --accent-soft:rgba(25,119,162,.16);
+  --box:#E8ECEF;
+  --white:#FFFFFF;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font:400 16px/1.65 var(--sans);
+  -webkit-font-smoothing:antialiased;
+  background-color:var(--mat);
+  background-image:linear-gradient(var(--mat-line) 1px,transparent 1px),linear-gradient(90deg,var(--mat-line) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at 50% 40%,transparent 40%,rgba(0,0,0,.5) 100%)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+p{margin:0}
+
+/* Sheet */
+.sheet{position:relative;z-index:1;max-width:1240px;margin:48px auto;padding:56px 48px 48px;
+  background-color:var(--paper);
+  background-image:radial-gradient(var(--dot) 1px,transparent 1.3px);
+  background-size:24px 24px;
+  border-radius:16px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.5)}
+.sheet--narrow{max-width:800px;padding:56px 56px 48px}
+
+/* Type */
+.label{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+.label--accent{color:var(--accent)}
+.name{font:700 clamp(30px,2.9vw,40px)/1.08 var(--sans);letter-spacing:-.02em;text-transform:uppercase;margin:0}
+.title{display:none;font:500 14px/1.4 var(--sans);color:var(--ink-60);margin-top:10px}
+.title span{display:block}
+.lede{font:400 17px/1.5 var(--sans);max-width:40ch;color:var(--ink)}
+.h2{font:600 clamp(24px,2.2vw,30px)/1.2 var(--sans);letter-spacing:-.015em;margin:12px 0 16px}
+.body{color:var(--ink-60)}
+.hl{background:var(--accent-soft);padding:0 .22em;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* Two column block */
+.grid{display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);gap:64px;align-items:start}
+.identity{position:sticky;top:48px;min-height:calc(100vh - 96px);display:flex;flex-direction:column;gap:26px;min-width:0}
+.identity__foot{margin-top:auto;padding-top:24px}
+.hero{display:flex;flex-direction:column;gap:26px}
+.polaroid{width:clamp(200px,30vh,220px);background:var(--white);padding:12px;border-radius:4px;
+  box-shadow:0 12px 32px rgba(0,0,0,.18);transform:rotate(-2deg);position:relative;margin:6px 0 4px 6px}
+.polaroid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px;background:var(--box)}
+.polaroid .pcap{position:relative;margin-top:10px;text-align:left;padding-right:34px;font:500 9px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-60)}
+.polaroid .pcap span{display:block;white-space:nowrap}
+.polaroid .pcap .year{position:absolute;right:0;top:0}
+.polaroid .pcap .pcap__mobile{display:none}
+.actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:var(--ink);
+  border:1px solid rgba(11,22,34,.18);background:rgba(255,255,255,.5)}
+.icon svg{width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);letter-spacing:.06em;
+  padding:11px 14px;border-radius:8px;cursor:pointer;border:1px solid transparent;white-space:nowrap}
+.btn svg{width:12px;height:12px}
+.btn--primary{background:var(--ink);color:var(--paper)}
+.btn--ghost{border-color:rgba(11,22,34,.22);color:var(--ink);background:rgba(255,255,255,.4)}
+.btn--link{padding:0;border:0;background:none;color:var(--accent);font:500 15px var(--sans);letter-spacing:0}
+
+/* Logo tile (resume) */
+.tile{flex:0 0 40px;width:40px;height:40px;border-radius:10px;background:var(--box);display:grid;place-items:center;overflow:hidden;
+  font:700 12px var(--sans);color:var(--ink-60);letter-spacing:-.02em}
+.tile img{width:100%;height:100%;object-fit:contain;padding:6px;background:var(--white)}
+.tile--flush img{padding:0;object-fit:cover}
+
+/* Work cards */
+.work{display:flex;flex-direction:column;gap:44px;margin-top:16px}
+.card{display:block;-webkit-tap-highlight-color:transparent;transition:opacity .15s ease}
+.card:hover{opacity:.92}
+.card:active{opacity:.7}
+.box{aspect-ratio:16/10;background:var(--box);border-radius:12px;overflow:hidden;display:grid;place-items:center;padding:24px;position:relative}
+.box img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.box--cover{padding:0}
+.box--cover img{width:100%;height:100%;object-fit:cover;border-radius:0}
+.box--ph::after{content:attr(data-ph);position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;
+  font:500 11px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-40)}
+.card .cap{font:400 17px/1.5 var(--sans);margin:16px 0 8px;color:var(--ink)}
+.card .meta{font:500 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* Full width sections */
+.section{margin-top:144px}
+.section + .section{margin-top:112px}
+.belief{font:400 19px/1.55 var(--sans);max-width:60ch;margin-top:4px}
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 40px;margin-top:36px}
+.pr .num{font:500 12px/1 var(--mono);letter-spacing:.14em;color:var(--accent);margin-bottom:10px}
+.pr h3{font:600 16px/1.35 var(--sans);margin:0 0 6px}
+.pr p{font-size:15px;color:var(--ink-60)}
+.traits{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 24px;margin-top:28px}
+.tr h3{font:600 15px/1.35 var(--sans);margin:0 0 6px}
+.tr p{font-size:14px;color:var(--ink-60)}
+.desk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px}
+.desk .box{aspect-ratio:4/3}
+.desk p{font-size:15px;color:var(--ink-60);margin-top:12px}
+.desk b{color:var(--ink);font-weight:600}
+
+/* Footer */
+.foot{margin-top:112px;padding-top:8px}
+.foot .lede{max-width:52ch}
+.foot .actions{margin-top:20px}
+.foot .fine{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;margin-top:40px}
+.foot .fine .label{margin:0}
+.foot .copy{font-size:13px;color:var(--ink-40)}
+
+/* Letter and resume pages */
+.back{display:inline-flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);letter-spacing:.06em;color:var(--ink-60)}
+.back svg{width:12px;height:12px}
+.letter-head{display:flex;justify-content:space-between;gap:16px;margin:44px 0 20px;flex-wrap:wrap}
+.letter h1{font:600 clamp(28px,3vw,36px)/1.15 var(--sans);letter-spacing:-.02em;margin:0 0 28px}
+.letter p{font-size:17px;line-height:1.6;color:var(--ink-60);margin:0 0 22px}
+.letter p b{color:var(--ink);font-weight:600;display:block;margin-bottom:4px}
+.letter .sig{font:400 17px var(--sans);color:var(--ink);margin-top:36px}
+
+.resume h1{font:700 30px/1.15 var(--sans);letter-spacing:-.02em;margin:0 0 6px}
+.resume .sub{font-size:15px;color:var(--ink-60)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
+.chip{display:inline-flex;align-items:center;gap:8px;font:400 12px/1 var(--mono);padding:8px 12px;border-radius:999px;
+  border:1px solid rgba(11,22,34,.16);background:rgba(255,255,255,.45);color:var(--ink)}
+.chip svg{width:13px;height:13px;color:var(--muted)}
+.rsec{margin-top:36px}
+.rsec .label{padding-bottom:8px;border-bottom:1px solid var(--rule);margin-bottom:18px}
+.entry{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;margin-bottom:24px}
+.entry .role{font:600 16px/1.3 var(--sans)}
+.entry .co{font-size:14px;color:var(--ink);margin-top:2px}
+.entry .co span{font:400 12px var(--mono);color:var(--muted);margin-left:10px}
+.entry .sum{font-size:14px;color:var(--ink-60);margin-top:8px}
+.entry ul{margin:10px 0 0;padding-left:18px;font-size:14px;line-height:1.6;color:var(--ink-60)}
+.entry li{margin:0 0 5px}
+.entry li b{color:var(--ink);font-weight:600}
+.entry li.more{display:none}
+.entry.open li.more{display:list-item}
+.more-toggle{padding:0;border:0;background:none;color:var(--accent);font:500 13px/1.4 var(--sans);cursor:pointer;margin-top:6px}
+.entry.open .more-toggle .when-closed,.entry:not(.open) .more-toggle .when-open{display:none}
+.entry--compact{margin-bottom:12px;align-items:center}
+.entry--compact .role{font-size:14px;font-weight:500}
+.entry--compact .role span{color:var(--ink-60);font-weight:400}
+.kv{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px 16px;font-size:14px}
+.kv dt{font:500 13px/1.6 var(--sans);color:var(--accent);margin:0}
+.kv dd{margin:0;color:var(--ink-60);line-height:1.6}
+.edu{margin-bottom:12px}
+.edu .role{font:600 15px/1.3 var(--sans)}
+.edu .co{font-size:14px;color:var(--ink-60)}
+.resume .co a,.resume .role a{text-decoration:underline;text-decoration-color:rgba(11,22,34,.28);text-decoration-thickness:1px;text-underline-offset:3px}
+.resume .co a:hover,.resume .role a:hover{text-decoration-color:var(--accent)}
+.float-btn{position:fixed;top:24px;right:24px;z-index:5;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.float-btn.btn--primary{background:var(--white);color:var(--ink)}
+
+/* Responsive */
+@media (max-width:1180px){.sheet{margin:32px 24px}}
+@media (max-width:1023px){
+  .sheet{margin:24px;padding:40px 32px}
+  .grid{grid-template-columns:1fr;gap:56px}
+  .identity{position:static;min-height:0;gap:24px;align-items:center;text-align:center}
+  .identity__foot{display:none}
+  .hero{align-items:center;gap:22px}
+  .title{display:block;font-size:15px;margin-top:0}
+  .polaroid{margin:4px 0 0}
+  .polaroid .pcap{text-align:center;padding-right:0}
+  .polaroid .pcap .pcap__desk{display:none}
+  .polaroid .pcap .pcap__mobile{display:block}
+  .identity .lede{margin:0 auto}
+  .actions{justify-content:center}
+  .foot{text-align:center}
+  .foot .lede{margin:0 auto}
+  .foot .actions,.foot .fine{justify-content:center}
+  .principles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .traits{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .section{margin-top:104px}
+  .section + .section{margin-top:88px}
+  .float-btn{position:static;margin-bottom:24px;box-shadow:none}
+}
+@media (max-width:767px){
+  .sheet{margin:10px;padding:36px 20px 36px;border-radius:12px}
+  .sheet--narrow{padding:28px 20px 32px}
+  .grid{gap:48px}
+  .identity{gap:22px}
+  .name{font-size:34px}
+  .polaroid{width:200px}
+  .lede{font-size:17px}
+  .icon{width:44px;height:44px;border-radius:12px}
+  .btn{min-height:44px;padding:12px 16px;border-radius:10px}
+  .btn--link{font-size:16px}
+  .work{gap:40px}
+  .card .cap{font-size:16px}
+  .traits{gap:24px}
+  .tr h3{font-size:16px}
+  .tr p{font-size:15px}
+  .pr p{font-size:15px}
+  .desk{gap:28px}
+  .principles,.traits,.desk{grid-template-columns:1fr}
+  .box{padding:16px;aspect-ratio:4/3}
+  .kv{grid-template-columns:1fr;gap:2px 0}
+  .kv dd{margin-bottom:10px}
+  .section{margin-top:80px}
+  .section + .section{margin-top:64px}
+  .foot{margin-top:72px}
+}
+
+/* Print: the resume PDF comes from this page */
+@media print{
+  @page{size:A4;margin:14mm 16mm}
+  body{background:#fff;color:#000}
+  body::before{display:none}
+  .sheet{box-shadow:none;margin:0;max-width:none;padding:0;background:#fff;border-radius:0}
+  .no-print{display:none !important}
+  .chip{border-color:#ccc;background:none}
+  .entry{break-inside:avoid}
+  .entry li.more{display:list-item}
+  .rsec{margin-top:22px}
+  a[href^="http"]::after{content:""}
+  .resume .co a,.resume .role a{text-decoration:none;color:inherit}
+}

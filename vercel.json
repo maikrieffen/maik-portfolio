@@ -1,4 +1,9 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/project/garantiemax", "destination": "/work/garantiemax", "permanent": true },
+    { "source": "/project/raptive", "destination": "/work/raptive", "permanent": true },
+    { "source": "/about", "destination": "/how-i-work", "permanent": true }
+  ]
 }
