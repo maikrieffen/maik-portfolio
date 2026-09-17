@@ -43,7 +43,6 @@ p{margin:0}
 .label{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
 .label--accent{color:var(--accent)}
 .name{font:700 clamp(30px,2.9vw,40px)/1.08 var(--sans);letter-spacing:-.02em;text-transform:uppercase;margin:0}
-.m-only{display:none}
 .lede{font:400 17px/1.5 var(--sans);max-width:40ch;color:var(--ink)}
 .h2{font:600 clamp(24px,2.2vw,30px)/1.2 var(--sans);letter-spacing:-.015em;margin:12px 0 16px}
 .body{color:var(--ink-60)}
@@ -101,9 +100,37 @@ p{margin:0}
 .desk .box{aspect-ratio:4/3}
 .desk p{font-size:15px;color:var(--ink-60);margin-top:12px}
 .desk b{color:var(--ink);font-weight:600}
-.more-note{font-size:15px;color:var(--ink-60);margin-top:28px}
 .more-link{margin-top:36px}
 .deck__dots{display:none}
+/* How I work: an index of the six principles. Hover a title on desktop, tap it on touch. */
+.plist{margin-top:44px;border-top:1px solid var(--rule)}
+.p{border-bottom:1px solid var(--rule)}
+.p__row{display:grid;grid-template-columns:44px minmax(0,1fr) 15px;gap:0 12px;align-items:center;
+  width:100%;text-align:left;font:inherit;background:none;border:0;padding:19px 0;cursor:pointer;
+  -webkit-tap-highlight-color:transparent}
+.p__num{font:500 12px/1.4 var(--mono);letter-spacing:.14em;color:var(--ink-40);transition:color .25s ease}
+.p__title{font:600 17px/1.4 var(--sans);color:var(--ink);transition:color .25s ease}
+.p__mark{position:relative;width:15px;height:15px;justify-self:end}
+.p__mark::before,.p__mark::after{content:"";position:absolute;left:0;top:7px;width:15px;height:1.5px;border-radius:2px;
+  background:var(--ink-40);transition:transform .3s ease,background .25s ease}
+.p__mark::after{transform:rotate(90deg)}
+.p.is-on .p__num{color:var(--accent)}
+.p.is-on .p__mark::before,.p.is-on .p__mark::after{background:var(--accent)}
+.p.is-on .p__mark::after{transform:rotate(0)}
+.p__body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .34s ease,opacity .25s ease}
+.p__body > p{overflow:hidden;font:400 16px/1.6 var(--sans);color:var(--ink-60)}
+.p.is-on .p__body{grid-template-rows:1fr;opacity:1}
+.p.is-on .p__body > p{padding-bottom:20px}
+@media (min-width:1024px){
+  .plist{margin-top:52px}
+  .p__row{grid-template-columns:56px minmax(0,1fr);padding:23px 0;transition:border-color .25s ease}
+  .p__num{font-size:13px}
+  .p__title{font-size:21px;line-height:1.35;letter-spacing:-.01em;color:var(--ink-60)}
+  .p__row:hover .p__title,.p.is-on .p__title{color:var(--ink)}
+  .p__mark{display:none}
+  .p__body > p{font-size:17px;line-height:1.7;max-width:76ch;padding-left:68px}
+  .p.is-on .p__body > p{padding-bottom:28px}
+}
 /* Footer */
 .foot{margin-top:144px;padding-top:8px}
 .foot .lede{max-width:52ch}
@@ -188,12 +215,11 @@ p{margin:0}
   .btn{min-height:44px;padding:12px 16px;border-radius:10px}
   .btn--link{font-size:16px}
   .work{gap:40px}
+  .p__row{grid-template-columns:32px minmax(0,1fr) 15px;gap:0 10px}
   .card .cap{font-size:16px}
-  .m-only{display:block}
   .tr h3{font-size:16px}
   .tr p{font-size:15px}
   .pr p{font-size:15px}
-  .pr--more{display:none}
   .recap .principles{grid-template-columns:1fr}
   /* How I operate: a swipeable deck. Front card sharp, the ones behind blurred. */
   .deck{position:relative}

@@ -29,6 +29,7 @@
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
   // How I operate on phones: a swipeable deck. The card in front is sharp, the ones behind
   // sit lower, smaller and blurred, so there is only ever one card to read.
+  (function () {
   var track = document.querySelector("[data-deck]");
   if (!track) return;
   var dots = document.querySelector("[data-deck-dots]");
@@ -76,4 +77,31 @@
   window.addEventListener("resize", sync);
   if (phone.addEventListener) { phone.addEventListener("change", sync); } else if (phone.addListener) { phone.addListener(sync); }
   sync();
+  })();
+  // How I work: the six principles as an index. On desktop the title you point at shows its
+  // body next to the list. Below 1024px the same rows open and close on tap, one at a time.
+  (function () {
+  var list = document.querySelector("[data-plist]");
+  if (!list) return;
+  var items = Array.prototype.slice.call(list.querySelectorAll(".p"));
+  var wide = window.matchMedia("(min-width:1024px)");
+  function show(item) {
+    items.forEach(function (p) {
+      var on = p === item;
+      p.classList.toggle("is-on", on);
+      p.querySelector(".p__row").setAttribute("aria-expanded", on ? "true" : "false");
+    });
+  }
+  items.forEach(function (item) {
+    var row = item.querySelector(".p__row");
+    row.addEventListener("click", function () {
+      show(!wide.matches && item.classList.contains("is-on") ? null : item);
+    });
+    row.addEventListener("mouseenter", function () { if (wide.matches) { show(item); } });
+    row.addEventListener("focus", function () { if (wide.matches) { show(item); } });
+  });
+  function reset() { show(wide.matches ? items[0] : null); }
+  if (wide.addEventListener) { wide.addEventListener("change", reset); } else if (wide.addListener) { wide.addListener(reset); }
+  reset();
+  })();
 })();
